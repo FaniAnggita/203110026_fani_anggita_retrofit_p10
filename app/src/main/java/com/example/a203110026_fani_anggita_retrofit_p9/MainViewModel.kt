@@ -5,11 +5,14 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+// TODO 4: Class ViewModel
 class MainViewModel(private val repository: MainRepository) : ViewModel() {
 
+    //  set mutable list
     val movieList = MutableLiveData<List<Movie>>()
     val errorMessage = MutableLiveData<String>()
 
+    // mengembalikan semua list movie
     fun getAllMovies() {
         val response = repository.getAllMovies()
         response.enqueue(object : Callback<MovieList> {

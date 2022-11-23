@@ -5,10 +5,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.a203110026_fani_anggita_retrofit_p9.databinding.LayoutRvItemBinding
 
+// TODO 3: Class Adapter
 class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
 
+    // variabel untuk menerima mutable list movie
     var movies = mutableListOf<Movie>()
 
+    // fungsi ini akan mengembalikan mutable list movie
     fun setMovieList(movies: List<Movie>) {
         this.movies = movies.toMutableList()
         notifyDataSetChanged()
@@ -21,6 +24,7 @@ class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
         return MainViewHolder(binding)
     }
 
+    // TODO 9: Bagian untuk menampilkan gambar
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val movie = movies[position]
         holder.binding.movieTitle.text = movie.title
